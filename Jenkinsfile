@@ -1,7 +1,7 @@
 pipeline {
     agent {label 'slave1'}
     environment {
-        ANSIBLE_HOST = '54.226.253.118'        // The machine where Ansible is installed
+        ANSIBLE_HOST = '172.31.24.71'        // The machine where Ansible is installed
         KUBECONFIG_PATH = '/home/ubuntu/.kube/config'    // Path to the Kubernetes kubeconfig file
     }
     stages {
