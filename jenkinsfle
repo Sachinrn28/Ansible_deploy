@@ -1,13 +1,13 @@
 pipeline {
-    agent {label 'slave-2'}
+    agent {label 'slave1'}
     environment {
-        ANSIBLE_HOST = '172.31.25.202'        // The machine where Ansible is installed
+        ANSIBLE_HOST = '54.226.253.118'        // The machine where Ansible is installed
         KUBECONFIG_PATH = '/home/ubuntu/.kube/config'    // Path to the Kubernetes kubeconfig file
     }
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/nitinn94/ansible.git'  // Fetch your codebase
+                git branch: 'main', url: 'https://github.com/Sachinrn28/Ansible_deploy.git'  // Fetch your codebase
             }
         }
         stage('Run Ansible Playbook') {
