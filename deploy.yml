@@ -8,4 +8,4 @@
       kubernetes.core.k8s:
         kubeconfig: "{{ kubeconfig_path }}"
         state: present
-        definition: "{{ lookup('file', '..deployment.yaml') }}"
+        definition: "{{ lookup('file', 'deployment.yaml') }}"
