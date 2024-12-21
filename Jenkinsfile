@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Run Ansible Playbook') {
             steps {
-                sshagent(['Jenkins-private-key']) {
+                sshagent(['jenkins_master']) {
                     sh '''
                     ansible-playbook -i ${ANSIBLE_HOST}, \
                                      -e kubeconfig_path=${KUBECONFIG_PATH} \
