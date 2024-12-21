@@ -1,0 +1,10 @@
+  name: Deploy application to Kubernetes
+  hosts: localhost
+  vars:
+    ansible_python_interpreter: "/home/ubuntu/myenv/bin/python"
+  tasks:
+    - name: Apply Kubernetes manifests
+      kubernetes.core.k8s:
+        kubeconfig: "{{ kubeconfig_path }}"
+        state: present
+        definition: "{{ lookup('file', '../manifests/deployment.yaml') }}"
